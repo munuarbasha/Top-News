@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk = Configs.compileSdk
+
+    defaultConfig {
+        applicationId = Configs.applicationId
+        minSdk = Configs.minSdk
+        targetSdk = Configs.targetSdk
+        versionCode = AppReleases.versionCode
+        versionName = AppReleases.versionName
+
+        testInstrumentationRunner = Configs.testInstrumentationRunner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    //Androidx libs
+    implementation(Libraries.androidxCore)
+    implementation(Libraries.androidxAppCompat)
+    implementation(Libraries.constraintLayout)
+
+    //Coroutines
+    implementation(Libraries.coroutinesCore)
+    implementation(Libraries.coroutinesAndroid)
+    implementation(Libraries.coroutinesPlayServices)
+
+    //Retrofit
+    implementation(Libraries.retrofit)
+    implementation(Libraries.gsonConverter)
+    implementation(Libraries.loggingInterceptor)
+    implementation(Libraries.scalarsConvertor)
+
+    //material design
+    implementation(Libraries.materialDesign)
+
+    // Navigation Component
+    implementation(Libraries.navComponentFragment)
+    implementation(Libraries.navComponentUI)
+
+    //Hilt for di
+    implementation(Libraries.hilt)
+    kapt(Libraries.hiltCompiler)
+
+    // Hilt ViewModel extension
+    kapt(Libraries.hiltCompiler)
+
+    //Glide for image rendering
+    implementation(Libraries.glide)
+    kapt(Libraries.glideCompiler)
+
+    implementation(Libraries.junit)
+    implementation(Libraries.androidxJunit)
+    implementation(Libraries.androidxEspresso)
+    implementation(Libraries.navigationComponentTest)
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
