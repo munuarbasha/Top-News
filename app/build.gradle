@@ -33,14 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation(project(Models.domain))
+    implementation(project(Models.data))
+    implementation(project(Models.common))
 
     //Androidx libs
     implementation(Libraries.androidxCore)
