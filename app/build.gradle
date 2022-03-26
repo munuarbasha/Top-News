@@ -50,12 +50,6 @@ dependencies {
     implementation(Libraries.coroutinesAndroid)
     implementation(Libraries.coroutinesPlayServices)
 
-    //Retrofit
-    implementation(Libraries.retrofit)
-    implementation(Libraries.gsonConverter)
-    implementation(Libraries.loggingInterceptor)
-    implementation(Libraries.scalarsConvertor)
-
     //material design
     implementation(Libraries.materialDesign)
 
@@ -65,21 +59,16 @@ dependencies {
 
     //Hilt for di
     implementation(Libraries.hilt)
-    kapt(Libraries.hiltCompiler)
-
-    // Hilt ViewModel extension
-    kapt(Libraries.hiltCompiler)
+    kapt(Libraries.hiltAndroidCompiler)
 
     //Glide for image rendering
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
 
+    //test
     implementation(Libraries.junit)
     implementation(Libraries.androidxJunit)
     implementation(Libraries.androidxEspresso)
     implementation(Libraries.navigationComponentTest)
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

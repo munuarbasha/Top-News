@@ -19,8 +19,6 @@ object Libraries {
     const val retrofit = "com.squareup.retrofit2:retrofit:${GradleVersions.retrofitVersion}"
     const val gsonConverter =
         "com.squareup.retrofit2:converter-gson:${GradleVersions.retrofitVersion}"
-    const val scalarsConvertor =
-        "com.squareup.retrofit2:converter-scalars:${GradleVersions.retrofitVersion}"
 
     // Logging Interceptor
     const val loggingInterceptor =
