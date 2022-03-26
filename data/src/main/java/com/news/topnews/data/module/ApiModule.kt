@@ -1,7 +1,8 @@
-package com.news.topnews.data.di
+package com.news.topnews.data.module
 
-import com.news.topnews.data.ApiConfig
+import com.news.topnews.data.utils.ApiConfig
 import com.news.topnews.data.BuildConfig
+import com.news.topnews.data.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -64,5 +65,8 @@ class ApiModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
 }

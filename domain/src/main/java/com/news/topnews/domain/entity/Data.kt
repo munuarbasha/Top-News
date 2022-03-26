@@ -1,4 +1,4 @@
-package com.news.topnews.domain.model
+package com.news.topnews.domain.entity
 
 import android.os.Parcelable
 import androidx.annotation.Keep

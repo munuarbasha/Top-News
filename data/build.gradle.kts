@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":domain"))
     //Coroutines
     implementation(Libraries.coroutinesCore)
     implementation(Libraries.coroutinesAndroid)

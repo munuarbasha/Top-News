@@ -34,8 +34,6 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
-.idea/libraries
 
 # Keystore files
 *.jks
@@ -46,20 +44,6 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
-
-# User-specific stuff:
-.idea/tasks.xml
-
-# Sensitive or high-churn files:
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/dataSources.local.xml
-.idea/sqlDataSources.xml
-.idea/dynamic.xml
-.idea/uiDesigner.xml
-
-# Gradle:
-.idea/gradle.xml
 
 ## File-based project format:
 *.iws
@@ -72,16 +56,10 @@ gen-external-apklibs
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
 
 ### Intellij+iml Patch ###
 
 modules.xml
-.idea/misc.xml
 *.ipr
 
 # Ignore Gradle GUI config
@@ -94,20 +72,7 @@ gradle-app.setting
 .gradletasknamecache
 
 # User-specific configurations
-.idea/caches
-.idea/modules.xml
-.idea/navEditor.xml
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/codeStyles/Project.xml
-/.idea/compiler.xml
-/.idea/jarRepositories.xml
-/.idea/vcs.xml
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+/.idea
 
 # OS-specific files
 .DS_Store
