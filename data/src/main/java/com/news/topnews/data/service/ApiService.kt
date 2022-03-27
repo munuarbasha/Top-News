@@ -11,7 +11,7 @@ interface ApiService {
         @Query("language") language: String = ApiConfig.DEFAULT_LANGUAGE,
         @Query("locale") locale: String = ApiConfig.DEFAULT_LOCALE,
         @Query("api_token") apiToken: String = ApiConfig.API_TOKEN,
-        @Query("page") page: Int = 1,
+        @Query("page") page: Int,
         @Query("limit") size: Int = 5
     ): TopNewsResponse
 }

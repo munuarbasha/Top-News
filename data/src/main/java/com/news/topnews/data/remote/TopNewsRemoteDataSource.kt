@@ -8,7 +8,7 @@ import javax.inject.Inject
 class TopNewsRemoteDataSource @Inject constructor(private val apiService: ApiService) :
     BaseApiResponse() {
 
-    suspend fun getTopNews(): ResponseWrapper<TopNewsResponse> {
-        return getWrappedResponse { apiService.getTopNews() }
+    suspend fun getTopNews(page: Int): ResponseWrapper<TopNewsResponse> {
+        return getWrappedResponse { apiService.getTopNews(page = page) }
     }
 }

@@ -48,7 +48,6 @@ object Libraries {
     const val glide = "com.github.bumptech.glide:glide:${GradleVersions.glideVersion}"
     const val glideCompiler = "com.github.bumptech.glide:compiler:${GradleVersions.glideVersion}"
 
-
     const val junit = "junit:junit:${GradleVersions.junitVersion}"
     const val androidxJunit = "androidx.test.ext:junit:${GradleVersions.androidxJunit}"
     const val androidxEspresso =

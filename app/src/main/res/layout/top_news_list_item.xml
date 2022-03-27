@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNewsHeadlines"
                 android:layout_marginStart="@dimen/_10dp"
-                android:text="@{newsData.published_at}"
+                app:dateText="@{newsData.published_at}"
                 tools:text="@string/test_date" />
 
         </RelativeLayout>

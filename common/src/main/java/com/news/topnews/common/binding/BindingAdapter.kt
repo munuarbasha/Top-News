@@ -8,6 +8,9 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.news.topnews.common.R
+import com.news.topnews.common.constants.CommonConstants
+import java.text.SimpleDateFormat
+import java.util.*
 
 @BindingAdapter("app:loadImageUrl")
 fun loadImageUrl(imageView: ImageView, url: String?) {
@@ -32,4 +35,17 @@ fun setTextWithUnderline(
         )
     }
     textView.text = spannableString
+}
+
+@BindingAdapter("app:dateText")
+fun setDateText(textView: TextView, dateStr: String) {
+    val simpleDateFormat = SimpleDateFormat(CommonConstants.DATE_FORMAT_ISO, Locale.getDefault())
+    val dateString: Date? = simpleDateFormat.parse(dateStr)
+    dateString?.let {
+        textView.text =
+            SimpleDateFormat(CommonConstants.DATE_FORMAT_E_DD_MMM_YYY, Locale.getDefault()).format(
+                it
+            ).toString()
+    }
+
 }

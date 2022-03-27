@@ -12,10 +12,10 @@ import javax.inject.Inject
 
 internal class TopNewsRepositoryImpl @Inject constructor(private val remoteDataSource: TopNewsRemoteDataSource) :
     TopNewsRepository {
-    override suspend fun getTopNews(): Flow<ResponseWrapper<TopNewsResponse>> {
+    override suspend fun getTopNews(page: Int): Flow<ResponseWrapper<TopNewsResponse>> {
         return flow {
             emit(ResponseWrapper.Loading)
-            emit(remoteDataSource.getTopNews())
+            emit(remoteDataSource.getTopNews(page))
         }.flowOn(Dispatchers.IO)
     }
 }

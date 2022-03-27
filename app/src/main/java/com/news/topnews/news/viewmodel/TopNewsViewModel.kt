@@ -19,9 +19,9 @@ class TopNewsViewModel @Inject constructor(private val topNewsUseCase: TopNewsUs
     private val _topNewsList = MutableLiveData<ResponseWrapper<TopNewsResponse>>()
     val topNewsList: LiveData<ResponseWrapper<TopNewsResponse>> = _topNewsList
 
-    fun getTopNews() {
+    fun getTopNews(page: Int = 1) {
         viewModelScope.launch {
-                topNewsUseCase.getTopNews().collect { response ->
+                topNewsUseCase.getTopNews(page).collect { response ->
                 _topNewsList.value = response
             }
         }

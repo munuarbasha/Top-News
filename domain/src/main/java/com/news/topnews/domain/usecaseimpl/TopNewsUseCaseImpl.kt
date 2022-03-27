@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 internal class TopNewsUseCaseImpl @Inject constructor(private val repository: TopNewsRepository) :
     TopNewsUseCase {
-    override suspend fun getTopNews(): Flow<ResponseWrapper<TopNewsResponse>> {
-        return repository.getTopNews()
+    override suspend fun getTopNews(page: Int): Flow<ResponseWrapper<TopNewsResponse>> {
+        return repository.getTopNews(page)
     }
 }
