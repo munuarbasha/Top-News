@@ -32,13 +32,17 @@ object Libraries {
         "androidx.navigation:navigation-fragment-ktx:${GradleVersions.navComponentVersion}"
     const val navComponentUI = "androidx.navigation:navigation-ui-ktx:${GradleVersions.navComponentVersion}"
 
+    // Android Jetpack Paging
+    const val pagination = "androidx.paging:paging-runtime:${GradleVersions.pagingVersion}"
 
     //Hilt for di
     const val hilt = "com.google.dagger:hilt-android:${GradleVersions.hiltVersion}"
     const val hiltAndroidCompiler =
         "com.google.dagger:hilt-android-compiler:${GradleVersions.hiltVersion}"
     const val hiltCompiler =
-        "androidx.hilt:hilt-compiler:${GradleVersions.hiltCompiler}"
+        "androidx.hilt:hilt-compiler:${GradleVersions.hiltCompilerVersion}"
+    const val hiltLifecycle =
+        "androidx.hilt:hilt-lifecycle-viewmodel:${GradleVersions.hiltLifecycleVersion}"
 
     //Glide for image rendering
     const val glide = "com.github.bumptech.glide:glide:${GradleVersions.glideVersion}"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="test_large_headlines">Sky News Mark Kleinman reports bids headed by the Ricketts family, Todd Boehly and Sir Martin Broughton on the shortlist being finalised by Raine Group to buy C…</string>
+    <string name="test_source">news24.com</string>
+    <string name="test_title">Top news headlines</string>
+    <string name="test_date" tools:ignore="TypographyDashes">2022-03-27 05:47:09</string>
+    <string name="test_author">Top News Author</string>
+</resources>

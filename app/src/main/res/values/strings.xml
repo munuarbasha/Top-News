@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Top News</string>
     <string name="app_logo">Application Logo</string>
+    <string name="top_news_image">Top News Image</string>
 </resources>

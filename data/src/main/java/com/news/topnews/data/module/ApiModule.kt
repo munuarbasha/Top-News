@@ -1,13 +1,12 @@
 package com.news.topnews.data.module
 
-import com.news.topnews.data.utils.ApiConfig
 import com.news.topnews.data.BuildConfig
 import com.news.topnews.data.service.ApiService
+import com.news.topnews.data.utils.ApiConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -47,13 +46,13 @@ class ApiModule {
             .build()
     }
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideConverterFactory(): GsonConverterFactory =
         GsonConverterFactory.create()
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory,
@@ -65,8 +64,8 @@ class ApiModule {
             .build()
     }
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
 }

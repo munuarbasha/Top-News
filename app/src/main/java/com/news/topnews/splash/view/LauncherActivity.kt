@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.news.topnews.MainActivity
+import com.news.topnews.TopNewsActivity
 import com.news.topnews.common.extensions.show
 import com.news.topnews.databinding.ActivitySplashScreenBinding
 import com.news.topnews.domain.common.ResponseWrapper
@@ -14,6 +14,7 @@ class LauncherActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
 
     private val viewModel by viewModels<SplashScreenViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
@@ -24,11 +25,10 @@ class LauncherActivity : AppCompatActivity() {
     private fun initObserver() {
         viewModel.splashStatus.observe(this) {
             when (it) {
-                is ResponseWrapper.Success -> {
-                    startActivity(Intent(this, MainActivity::class.java))
-                }
+                is ResponseWrapper.Loading -> binding.loadingProgressBar.show()
                 else -> {
-                    binding.loadingProgressBar.show()
+                    startActivity(Intent(this, TopNewsActivity::class.java))
+                    this.finish()
                 }
             }
         }

@@ -11,10 +11,11 @@ object GradleVersions {
     const val loggingInterceptor = "4.9.1"
     const val material = "1.5.0"
     const val navComponentVersion = "2.3.5"
-    const val hiltVersion = "2.38.1"
-    const val hiltCompiler = "1.0.0"
+    const val pagingVersion = "3.1.0"
+    const val hiltVersion = "2.40.5"
+    const val hiltCompilerVersion = "1.0.0"
+    const val hiltLifecycleVersion = "1.0.0"
     const val glideVersion = "4.11.0"
-
 
     const val junitVersion = "4.13.2"
     const val androidxJunit = "1.1.3"

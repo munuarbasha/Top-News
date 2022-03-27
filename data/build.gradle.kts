@@ -48,9 +48,14 @@ dependencies {
     implementation(Libraries.retrofit)
     implementation(Libraries.gsonConverter)
     implementation(Libraries.loggingInterceptor)
+
+    // Android Jetpack Paging
+    implementation(Libraries.pagination)
+
     //Hilt for di
     implementation(Libraries.hilt)
     kapt(Libraries.hiltAndroidCompiler)
+
     //test
     implementation(Libraries.junit)
     implementation(Libraries.androidxJunit)

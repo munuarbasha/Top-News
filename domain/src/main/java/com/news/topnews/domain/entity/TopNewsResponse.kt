@@ -7,6 +7,6 @@ import kotlinx.parcelize.Parcelize
 @Keep
 @Parcelize
 data class TopNewsResponse(
-    val data: List<Data>,
+    val data: List<NewsData>,
     val meta: Meta
 ): Parcelable

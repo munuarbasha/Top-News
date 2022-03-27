@@ -9,5 +9,31 @@
         android:id="@+id/topNewsListFragment"
         android:name="com.news.topnews.news.view.TopNewsListFragment"
         android:label="TopNewsListFragment"
-        tools:layout="@layout/fragment_top_news_list"/>
+        tools:layout="@layout/fragment_top_news_list">
+        <action
+            android:id="@+id/action_to_topNewsDetailsFragment"
+            app:destination="@id/topNewsDetailsFragment" />
+        <argument
+            android:name="newsData"
+            app:argType="com.news.topnews.domain.entity.NewsData" />
+    </fragment>
+    <fragment
+        android:id="@+id/topNewsDetailsFragment"
+        android:name="com.news.topnews.newsdetails.NewsDetailsFragment"
+        android:label="NewsDetailsFragment"
+        tools:layout="@layout/fragment_news_details">
+        <action
+            android:id="@+id/action_to_topNewsDetailsWebFragment"
+            app:destination="@id/topNewsDetailsWebFragment" />
+        <argument
+            android:name="webUrl"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topNewsDetailsWebFragment"
+        android:name="com.news.topnews.newsdetails.NewsDetailsWebFragment"
+        android:label="NewsDetailsWebFragment"
+        tools:layout="@layout/fragment_news_details_web" />
+
 </navigation>

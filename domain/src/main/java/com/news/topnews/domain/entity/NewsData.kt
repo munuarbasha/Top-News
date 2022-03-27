@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Keep
 @Parcelize
-data class Data(
+data class NewsData(
     val categories: List<String>,
     val description: String,
     val image_url: String,
