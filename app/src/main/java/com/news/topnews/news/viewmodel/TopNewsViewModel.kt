@@ -28,7 +28,7 @@ class TopNewsViewModel @Inject constructor(private val topNewsUseCase: TopNewsUs
      */
     fun getTopNews(page: Int = 1) {
         viewModelScope.launch {
-                topNewsUseCase.getTopNews(page).collect { response ->
+            topNewsUseCase.getTopNews(page).collect { response ->
                 _topNewsList.value = response
             }
         }

@@ -4,7 +4,10 @@ import com.news.topnews.domain.model.ErrorResponse
 /*
 *  sealed class that represents the API call response states.
 * */
-sealed class ResponseWrapper<out T> {
+sealed class ResponseWrapper<out T> (
+    val data: T? = null,
+    val message: String? = null
+){
     /**
      * Success response with body
      */

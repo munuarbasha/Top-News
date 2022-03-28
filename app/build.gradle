@@ -81,8 +81,8 @@ dependencies {
     androidTestImplementation(Libraries.androidxEspresso)
     androidTestImplementation(Libraries.navigationComponentTest)
     testImplementation(Libraries.mokito)
-    testImplementation(Libraries.mockWebServer)
     androidTestImplementation(Libraries.mockitoCore)
     testImplementation(Libraries.arcCore)
+    testImplementation(Libraries.coroutinesTest)
 
 }

@@ -61,6 +61,6 @@ object Libraries {
 
     const val mokito =  "org.mockito:mockito-all:${GradleVersions.mockito}"
     const val mockitoCore = "org.mockito:mockito-core:${GradleVersions.mockitoCore}"
-    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${GradleVersions.mockWebServer}"
     const val arcCore =  "androidx.arch.core:core-testing:${GradleVersions.androidArchCoreTesting}"
+    const val coroutinesTest =  "org.jetbrains.kotlinx:kotlinx-coroutines-test:${GradleVersions.coroutinesTestVersion}"
 }

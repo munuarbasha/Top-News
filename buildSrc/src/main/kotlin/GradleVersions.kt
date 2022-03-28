@@ -26,7 +26,7 @@ object GradleVersions {
     const val androidxEspresso = "3.4.0"
     const val mockito = "1.10.19"
     const val mockitoCore = "2.19.0"
-    const val mockWebServer = "4.9.1"
     const val androidArchCoreTesting = "2.1.0"
+    const val coroutinesTestVersion = "1.6.0"
 
 }
