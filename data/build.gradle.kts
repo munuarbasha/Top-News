@@ -58,7 +58,7 @@ dependencies {
 
     //test
     implementation(Libraries.junit)
-    implementation(Libraries.androidxJunit)
-    implementation(Libraries.androidxEspresso)
+    androidTestImplementation(Libraries.androidxJunit)
+    androidTestImplementation(Libraries.androidxEspresso)
 
 }

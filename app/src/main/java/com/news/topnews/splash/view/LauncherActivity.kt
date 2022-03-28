@@ -22,6 +22,10 @@ class LauncherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        checkDeviceRootStatus()
+    }
+
+    private fun checkDeviceRootStatus() {
         if (DeviceRootChecker.isRooted(this)) {
             AlertDialogUtils.showError(this, getString(R.string.device_rooted_message)) {
                 finish()

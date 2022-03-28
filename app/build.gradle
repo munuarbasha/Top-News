@@ -72,11 +72,17 @@ dependencies {
     //Glide for image rendering
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
-
+    //Retrofit
+    implementation(Libraries.retrofit)
+    implementation(Libraries.gsonConverter)
     //test
     implementation(Libraries.junit)
-    implementation(Libraries.androidxJunit)
-    implementation(Libraries.androidxEspresso)
-    implementation(Libraries.navigationComponentTest)
+    androidTestImplementation(Libraries.androidxJunit)
+    androidTestImplementation(Libraries.androidxEspresso)
+    androidTestImplementation(Libraries.navigationComponentTest)
+    testImplementation(Libraries.mokito)
+    testImplementation(Libraries.mockWebServer)
+    androidTestImplementation(Libraries.mockitoCore)
+    testImplementation(Libraries.arcCore)
 
 }
