@@ -7,7 +7,7 @@ abstract class PaginationListener(private val layoutManager: LinearLayoutManager
     RecyclerView.OnScrollListener() {
     // The minimum amount of items to have below your current scroll position
     // before loading more.
-    private var visibleThreshold = 3
+    private var visibleThreshold = 5
 
     // The current offset index of data you have loaded
     private var currentPage = 0
@@ -23,9 +23,8 @@ abstract class PaginationListener(private val layoutManager: LinearLayoutManager
 
 
     override fun onScrolled(view: RecyclerView, dx: Int, dy: Int) {
-        var lastVisibleItemPosition = 0
         val totalItemCount: Int = layoutManager.itemCount
-        lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
+        val lastVisibleItemPosition: Int = layoutManager.findLastVisibleItemPosition()
 
         // If the total item count is zero and the previous isn't, assume the
         // list is invalidated and should be reset back to initial state

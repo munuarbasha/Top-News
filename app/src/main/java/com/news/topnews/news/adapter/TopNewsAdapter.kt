@@ -45,7 +45,7 @@ class TopNewsAdapter(
     fun addList(list: List<NewsData>) {
         val oldSize: Int = this.newsList.size
         this.newsList.addAll(list)
-        notifyItemRangeChanged(oldSize, this.newsList.size)
+        notifyItemRangeChanged(oldSize-1, this.newsList.size)
     }
 
     inner class TopNewsViewHolder(private val binding: TopNewsListItemBinding) :
