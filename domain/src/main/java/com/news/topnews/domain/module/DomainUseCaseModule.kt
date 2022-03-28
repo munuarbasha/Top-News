@@ -7,6 +7,9 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
+/**
+ * DI Module class to bind User case interface
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class DomainUseCaseModule {

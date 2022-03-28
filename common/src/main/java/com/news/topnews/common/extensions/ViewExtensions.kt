@@ -5,6 +5,9 @@ import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 
+/**
+ * Extension for Views
+ */
 fun View.show() {
     if (!this.isVisible)
         this.visibility = View.VISIBLE

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,33 +22,14 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/test_title" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            style="@style/TopNewsStyle.Card"
-            android:layout_width="@dimen/_340dp"
-            android:layout_height="@dimen/_240dp"
-            app:cardCornerRadius="@dimen/_32dp"
-            app:cardElevation="@dimen/_6dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvNewsTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:loadImageUrl="@{newsData.image_url}"
-                tools:src="@drawable/img_news_placeholder" />
-        </androidx.cardview.widget.CardView>
-
         <TextView
             android:id="@+id/tvNewsHeadlines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:includeFontPadding="false"
             android:text="@{newsData.description}"
             android:textSize="@dimen/_16sp"
-            android:includeFontPadding="false"
-            android:layout_marginTop="@dimen/_16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             tools:text="@string/test_large_headlines" />
@@ -56,9 +38,9 @@
             android:id="@+id/tvNewsSnippet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:includeFontPadding="false"
             android:text="@{newsData.snippet}"
             android:textSize="@dimen/_16sp"
-            android:includeFontPadding="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNewsHeadlines"
             tools:text="@string/test_large_headlines" />
@@ -68,12 +50,31 @@
             style="@style/TopNewsStyle.Headlines"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textWithUnderline="@{newsData.source}"
             android:textColor="@color/blue"
             android:textSize="@dimen/_14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNewsSnippet"
+            bind:textWithUnderline="@{newsData.source}"
             tools:text="@string/test_source" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="@style/TopNewsStyle.Card"
+            android:layout_width="@dimen/_340dp"
+            android:layout_height="@dimen/_240dp"
+            app:cardCornerRadius="@dimen/_32dp"
+            app:cardElevation="@dimen/_6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNewsTitle">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                bind:loadImageUrl="@{newsData.image_url}"
+                tools:src="@drawable/img_news_placeholder" />
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

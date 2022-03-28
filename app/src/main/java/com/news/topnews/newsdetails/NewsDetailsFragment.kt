@@ -10,6 +10,9 @@ import com.news.topnews.common.constants.CommonConstants
 import com.news.topnews.databinding.FragmentNewsDetailsBinding
 import com.news.topnews.domain.entity.NewsData
 
+/**
+ * Fragment to display news details
+ */
 class NewsDetailsFragment : BaseBindingFragment<FragmentNewsDetailsBinding>() {
     private var newsData: NewsData? = null
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentNewsDetailsBinding

@@ -1,4 +1,6 @@
-
+/**
+ * object class for build plugin information
+ */
 object BuildPlugins {
     const val buildTools = "com.android.tools.build:gradle:${GradleVersions.buildTools}"
     const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${GradleVersions.kotlinGradlePlugin}"

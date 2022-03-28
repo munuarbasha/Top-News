@@ -1,10 +1,11 @@
 package com.news.topnews.domain.entity
 
 import android.os.Parcelable
-import androidx.annotation.Keep
 import kotlinx.parcelize.Parcelize
 
-@Keep
+/**
+ * Entity class for news data
+ */
 @Parcelize
 data class NewsData(
     val description: String = "",

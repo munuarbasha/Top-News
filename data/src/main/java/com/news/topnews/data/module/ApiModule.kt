@@ -15,6 +15,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+/**
+ * Hilt DI Module class for Network modules
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 class ApiModule {

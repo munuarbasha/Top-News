@@ -3,11 +3,14 @@ package com.news.topnews.data.remote
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.ErrorResponse
+import com.news.topnews.domain.model.ErrorResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
+/**
+ * Class to handle API response with Success or failure to make Safe API calls
+ */
 abstract class BaseApiResponse {
     suspend fun <T> getWrappedResponse(apiCall: suspend () -> T): ResponseWrapper<T> {
         return withContext(Dispatchers.IO) {

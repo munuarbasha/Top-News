@@ -1,5 +1,8 @@
 package com.news.topnews.common.constants
 
+/**
+ * Common class to add constants
+ */
 class CommonConstants {
     companion object {
         const val KEY_NEWS_DATA = "news_data_object"

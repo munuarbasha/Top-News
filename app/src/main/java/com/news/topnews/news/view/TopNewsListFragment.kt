@@ -20,6 +20,9 @@ import com.news.topnews.news.adapter.TopNewsAdapter
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * News List Fragment to display list of news
+ */
 @AndroidEntryPoint
 class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
     private lateinit var topNewsAdapter: TopNewsAdapter

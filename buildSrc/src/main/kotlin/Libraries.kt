@@ -1,3 +1,6 @@
+/**
+ * object class for gradle dependencies used in this project
+ */
 object Libraries {
 
     //androidx support

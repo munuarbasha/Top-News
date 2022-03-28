@@ -1,3 +1,6 @@
+/**
+ * object class for gradle dependency versions used in this project
+ */
 object GradleVersions {
 
     const val buildTools = "7.1.2"

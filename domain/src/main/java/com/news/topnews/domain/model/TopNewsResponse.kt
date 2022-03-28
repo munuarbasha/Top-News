@@ -1,10 +1,13 @@
-package com.news.topnews.domain.entity
+package com.news.topnews.domain.model
 
 import android.os.Parcelable
-import androidx.annotation.Keep
+import com.news.topnews.domain.entity.Meta
+import com.news.topnews.domain.entity.NewsData
 import kotlinx.parcelize.Parcelize
 
-@Keep
+/**
+ * Top News response class
+ */
 @Parcelize
 data class TopNewsResponse(
     val data: List<NewsData>,

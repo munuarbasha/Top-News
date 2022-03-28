@@ -3,8 +3,9 @@ package com.news.topnews.common.views
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-/*This class is created to customize
-the recyclerview ScrollListener to handle Pagination*/
+/**
+ * Class to customize the recyclerview ScrollListener to handle Pagination
+ */
 abstract class PaginationListener(private val layoutManager: LinearLayoutManager) :
     RecyclerView.OnScrollListener() {
     // The minimum amount of items to have below your current scroll position

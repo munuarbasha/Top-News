@@ -13,6 +13,9 @@ import com.news.topnews.databinding.ActivitySplashScreenBinding
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.splash.viewmodel.SplashScreenViewModel
 
+/**
+ * Launcher Activity to show splash screen
+ */
 class LauncherActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
 
@@ -25,6 +28,9 @@ class LauncherActivity : AppCompatActivity() {
         checkDeviceRootStatus()
     }
 
+    /**
+     * Verify root status
+     */
     private fun checkDeviceRootStatus() {
         if (DeviceRootChecker.isRooted(this)) {
             AlertDialogUtils.showError(this, getString(R.string.device_rooted_message)) {
@@ -35,6 +41,9 @@ class LauncherActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Live data observer from ViewModel
+     */
     private fun initObserver() {
         viewModel.splashStatus.observe(this) {
             when (it) {

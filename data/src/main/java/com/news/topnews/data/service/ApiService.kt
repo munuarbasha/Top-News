@@ -1,7 +1,7 @@
 package com.news.topnews.data.service
 
 import com.news.topnews.data.utils.ApiConfig
-import com.news.topnews.domain.entity.TopNewsResponse
+import com.news.topnews.domain.model.TopNewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.news.topnews.common.utils.ProgressDialogUtil
-
+/*
+ * Base fragment to handle view binding in child fragments
+ */
 abstract class BaseBindingFragment<VB : ViewBinding> : Fragment() {
     private var _binding: ViewBinding? = null
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
@@ -37,11 +39,15 @@ abstract class BaseBindingFragment<VB : ViewBinding> : Fragment() {
      */
     protected abstract fun setUpView()
 
-
+    /**
+     * Display progressbar
+     */
     fun showLoading() {
         dialog.show()
     }
-
+    /**
+     * Dismiss progressbar
+     */
     fun dismissLoading() {
         dialog.dismiss()
     }

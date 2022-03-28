@@ -5,7 +5,9 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.news.topnews.common.R
 
-
+/**
+ * Util class to display Alert dialog
+ */
 class AlertDialogUtils {
     companion object {
         private fun showAlertDialog(

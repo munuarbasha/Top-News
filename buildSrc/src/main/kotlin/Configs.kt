@@ -1,3 +1,6 @@
+/**
+ * object class for Application configuration
+ */
 object Configs {
     const val minSdk = 21
     const val targetSdk = 31

@@ -12,7 +12,10 @@ import com.news.topnews.common.constants.CommonConstants
 import java.text.SimpleDateFormat
 import java.util.*
 
-@BindingAdapter("app:loadImageUrl")
+/**
+ * Binding Adapter function to load image url from layout
+ */
+@BindingAdapter("bind:loadImageUrl")
 fun loadImageUrl(imageView: ImageView, url: String?) {
     Glide.with(imageView.context)
         .load(url)
@@ -20,7 +23,10 @@ fun loadImageUrl(imageView: ImageView, url: String?) {
         .into(imageView)
 }
 
-@BindingAdapter("app:textWithUnderline")
+/**
+ * Binding Adapter function to set text to textview with underline
+ */
+@BindingAdapter("bind:textWithUnderline")
 fun setTextWithUnderline(
     textView: TextView,
     text: String
@@ -37,7 +43,10 @@ fun setTextWithUnderline(
     textView.text = spannableString
 }
 
-@BindingAdapter("app:dateText")
+/**
+ * Binding Adapter function to set date text to textview with readable date format
+ */
+@BindingAdapter("bind:dateText")
 fun setDateText(textView: TextView, dateStr: String) {
     val simpleDateFormat = SimpleDateFormat(CommonConstants.DATE_FORMAT_ISO, Locale.getDefault())
     val dateString: Date? = simpleDateFormat.parse(dateStr)

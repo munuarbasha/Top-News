@@ -8,7 +8,9 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.IOException
 import java.io.InputStreamReader
-
+/**
+ * Util class to verify device root status
+ */
 object DeviceRootChecker {
 
     fun isRooted(context: Context): Boolean {

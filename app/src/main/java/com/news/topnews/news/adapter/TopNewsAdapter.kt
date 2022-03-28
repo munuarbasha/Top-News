@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.news.topnews.databinding.TopNewsListItemBinding
 import com.news.topnews.domain.entity.NewsData
 
-
+/**
+ * Adapter class for Top News list Recyclerview
+ */
 @SuppressLint("NotifyDataSetChanged")
 class TopNewsAdapter(
     private val onNewsClicked: (newsData: NewsData, itemView: View) -> Unit
