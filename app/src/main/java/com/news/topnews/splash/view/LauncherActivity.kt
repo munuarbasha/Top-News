@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.news.topnews.R
 import com.news.topnews.TopNewsActivity
 import com.news.topnews.common.extensions.show
+import com.news.topnews.common.utils.AlertDialogUtils
+import com.news.topnews.common.utils.DeviceRootChecker
 import com.news.topnews.databinding.ActivitySplashScreenBinding
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.splash.viewmodel.SplashScreenViewModel
@@ -19,7 +22,13 @@ class LauncherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initObserver()
+        if (DeviceRootChecker.isRooted(this)) {
+            AlertDialogUtils.showError(this, getString(R.string.device_rooted_message)) {
+                finish()
+            }
+        } else {
+            initObserver()
+        }
     }
 
     private fun initObserver() {

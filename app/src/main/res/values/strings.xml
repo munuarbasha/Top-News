@@ -2,5 +2,5 @@
     <string name="app_name">Top News</string>
     <string name="app_logo">Application Logo</string>
     <string name="top_news_image">Top News Image</string>
-    <string name="device_rooted">Your device rooted</string>
+    <string name="device_rooted_message">This app is not supported on Rooted Device.</string>
 </resources>

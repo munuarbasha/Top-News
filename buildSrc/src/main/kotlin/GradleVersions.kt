@@ -16,6 +16,7 @@ object GradleVersions {
     const val hiltCompilerVersion = "1.0.0"
     const val hiltLifecycleVersion = "1.0.0"
     const val glideVersion = "4.11.0"
+    const val timberVersion = "5.0.1"
 
     const val junitVersion = "4.13.2"
     const val androidxJunit = "1.1.3"

@@ -49,6 +49,8 @@ dependencies {
     //Glide for image rendering
     implementation(Libraries.glide)
     kapt(Libraries.glideCompiler)
+    //Timber for logs
+    api(Libraries.timber)
     //test
     implementation(Libraries.junit)
     implementation(Libraries.androidxJunit)
