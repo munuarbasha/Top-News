@@ -55,7 +55,7 @@ class TopNewsAdapter(
         fun bindTopNews(item: NewsData) {
             binding.newsData = item
             binding.root.setOnClickListener {
-                onNewsClicked.invoke(item, itemView)
+                onNewsClicked.invoke(item, it)
             }
         }
     }

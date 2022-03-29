@@ -3,6 +3,8 @@ package com.news.topnews.common.binding
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -56,5 +58,20 @@ fun setDateText(textView: TextView, dateStr: String) {
                 it
             ).toString()
     }
+}
 
+/**
+ * Binding Adapter function to load url in WebView
+ */
+@BindingAdapter("bind:loadWebView")
+fun loadUrlWithWebView(webView: WebView, webUrl: String) {
+    webView.webViewClient = object : WebViewClient() {
+        override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+            if (url != null) {
+                view?.loadUrl(url)
+            }
+            return true
+        }
+    }
+    webView.loadUrl(webUrl)
 }
