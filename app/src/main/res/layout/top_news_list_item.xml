@@ -40,7 +40,7 @@
 
             <TextView
                 android:id="@+id/tvNewsHeadlines"
-                style="@style/TopNewsStyle.Headlines"
+                style="@style/TopNewsStyle.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{newsData.title}"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNewsHeadlines"
-                android:layout_marginStart="@dimen/_10dp"
+                android:padding="@dimen/_10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvNewsHeadlines"
                 bind:dateText="@{newsData.published_at}"

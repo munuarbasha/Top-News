@@ -9,7 +9,6 @@
     <dimen name="_14dp">14dp</dimen>
     <dimen name="_16dp">16dp</dimen>
     <dimen name="_32dp">32dp</dimen>
-    <dimen name="_120dp">120dp</dimen>
     <dimen name="_180dp">180dp</dimen>
     <dimen name="_240dp">240dp</dimen>
     <dimen name="_340dp">340dp</dimen>
@@ -18,7 +17,5 @@
     <dimen name="_12sp">12sp</dimen>
     <dimen name="_14sp">14sp</dimen>
     <dimen name="_16sp">16sp</dimen>
-    <dimen name="_18sp">18sp</dimen>
-    <dimen name="_24sp">24sp</dimen>
 
 </resources>
