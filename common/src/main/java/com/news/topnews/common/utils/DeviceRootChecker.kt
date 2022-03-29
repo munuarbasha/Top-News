@@ -39,8 +39,7 @@ object DeviceRootChecker {
     }
 
     private fun hasChainFireSuperUser(context: Context): Boolean {
-        val superUserPackage = "eu.chainfire.supersu"
-        return superUserPackage.isPackageInstalled(context)
+        return isSuPackageInstalled(context)
     }
 
     private fun hasSU(): Boolean {
@@ -98,15 +97,15 @@ object DeviceRootChecker {
             }
         }
     }
-}
-
-/* Helper methods to check whether the su package is installed  */
-private fun String.isPackageInstalled(context: Context): Boolean {
-    val pm: PackageManager = context.packageManager
-    return try {
-        pm.getPackageInfo(this, PackageManager.GET_ACTIVITIES)
-        true
-    } catch (e: PackageManager.NameNotFoundException) {
-        false
+    /* Helper methods to check whether the su package is installed  */
+    private fun isSuPackageInstalled(context: Context): Boolean {
+        val pm: PackageManager = context.packageManager
+        val superUserPackage = "eu.chainfire.supersu"
+        return try {
+            pm.getPackageInfo(superUserPackage, PackageManager.GET_ACTIVITIES)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
 }

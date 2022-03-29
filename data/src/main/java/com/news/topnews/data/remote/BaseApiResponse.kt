@@ -11,7 +11,7 @@ import retrofit2.HttpException
 /**
  * Class to handle API response with Success or failure to make Safe API calls
  */
-abstract class BaseApiResponse {
+internal abstract class BaseApiResponse {
     suspend fun <T> getWrappedResponse(apiCall: suspend () -> T): ResponseWrapper<T> {
         return withContext(Dispatchers.IO) {
             try {

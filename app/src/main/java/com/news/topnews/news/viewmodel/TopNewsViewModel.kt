@@ -2,8 +2,8 @@ package com.news.topnews.news.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.news.topnews.common.base.BaseViewModel
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.domain.model.TopNewsResponse
 import com.news.topnews.domain.usecase.TopNewsUseCase
@@ -18,7 +18,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class TopNewsViewModel @Inject constructor(private val topNewsUseCase: TopNewsUseCase) :
-    ViewModel() {
+    BaseViewModel() {
 
     private val _topNewsList = MutableLiveData<ResponseWrapper<TopNewsResponse>>()
     val topNewsList: LiveData<ResponseWrapper<TopNewsResponse>> = _topNewsList

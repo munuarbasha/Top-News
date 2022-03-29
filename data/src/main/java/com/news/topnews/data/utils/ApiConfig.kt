@@ -3,7 +3,7 @@ package com.news.topnews.data.utils
 /**
  * API configuration class
  */
-object ApiConfig {
+internal object ApiConfig {
     const val READ_TIMEOUT = 30L
     const val WRITE_TIMEOUT = 30L
     const val CONNECTION_TIMEOUT = 10L

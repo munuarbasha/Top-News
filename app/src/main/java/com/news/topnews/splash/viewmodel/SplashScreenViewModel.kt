@@ -2,13 +2,13 @@ package com.news.topnews.splash.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.news.topnews.common.base.BaseViewModel
 import com.news.topnews.domain.common.ResponseWrapper
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SplashScreenViewModel : ViewModel() {
+class SplashScreenViewModel : BaseViewModel() {
     private val _splashStatus = MutableLiveData<ResponseWrapper<SplashState.SplashScreen>>()
     val splashStatus: LiveData<ResponseWrapper<SplashState.SplashScreen>> = _splashStatus
 

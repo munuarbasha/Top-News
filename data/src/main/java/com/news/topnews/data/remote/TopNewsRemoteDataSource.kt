@@ -8,7 +8,7 @@ import javax.inject.Inject
 /**
  * DataSource of Top News List API service
  */
-class TopNewsRemoteDataSource @Inject constructor(private val apiService: ApiService) :
+internal class TopNewsRemoteDataSource @Inject constructor(private val apiService: ApiService) :
     BaseApiResponse() {
     /**
      * This function is to get the top news list from TopNewsRemoteDataSource
