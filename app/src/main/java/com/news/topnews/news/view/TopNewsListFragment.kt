@@ -16,6 +16,7 @@ import com.news.topnews.common.views.PaginationListener
 import com.news.topnews.databinding.FragmentTopNewsListBinding
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.domain.entity.NewsData
+import com.news.topnews.domain.model.TopNewsResponse
 import com.news.topnews.news.adapter.TopNewsAdapter
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,8 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
     private lateinit var topNewsAdapter: TopNewsAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private val viewModel by viewModels<TopNewsViewModel>()
+    private val topNewsViewModel by viewModels<TopNewsViewModel>()
     private lateinit var paginationListener: PaginationListener
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentTopNewsListBinding
         get() = FragmentTopNewsListBinding::inflate
@@ -38,17 +38,17 @@ class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
     }
 
     private fun initRecyclerView() {
-        linearLayoutManager = LinearLayoutManager(requireContext())
-        topNewsAdapter = TopNewsAdapter(onNewsClicked = onNewsClicked)
+        val linearLayoutManager = LinearLayoutManager(requireContext())
+        topNewsAdapter = TopNewsAdapter(onNewsItemClicked = onNewsItemClicked)
         paginationListener = object : PaginationListener(linearLayoutManager) {
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
                 // When new data needs to be appended to the list
                 if (page > 1)
-                    viewModel.getTopNews(page)
+                    topNewsViewModel.getTopNews(page)
             }
         }
 
-        binding.topNewsRecyclerView.apply {
+        binding.rvTopNews.apply {
             layoutManager = linearLayoutManager
             setHasFixedSize(true)
             addOnScrollListener(paginationListener)
@@ -56,38 +56,36 @@ class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
         }
     }
 
-
-    private val onNewsClicked: (newsData: NewsData, itemView: View) -> Unit =
+    private val onNewsItemClicked: (newsData: NewsData, itemView: View) -> Unit =
         { newsData, itemView ->
-            val bundle = bundleOf(
-                CommonConstants.KEY_NEWS_DATA to newsData,
-            )
+            val bundle = bundleOf(CommonConstants.KEY_NEWS_DATA to newsData)
             Navigation.findNavController(itemView)
                 .navigate(R.id.action_to_topNewsDetailsFragment, bundle)
         }
 
     private fun initObserver() {
-        viewModel.getTopNews()
-        viewModel.topNewsList.observe(viewLifecycleOwner) {
+        topNewsViewModel.getTopNews()
+        topNewsViewModel.topNewsList.observe(viewLifecycleOwner) {
             when (it) {
                 is ResponseWrapper.Loading -> showLoading()
                 is ResponseWrapper.Success -> {
                     dismissLoading()
-                    if (it.value.meta.page == 1) {
-                        topNewsAdapter.list = it.value.data
-                    } else {
-                        topNewsAdapter.addList(it.value.data)
-                    }
-                    paginationListener.setLoading(false)
+                    updateAdapter(it.value)
                 }
                 is ResponseWrapper.Error -> {
-                    AlertDialogUtils.showError(
-                        requireContext(),
-                        it.error?.errorMessage
-                    )
+                    AlertDialogUtils.showError(requireContext(), it.error?.errorMessage)
                 }
             }
         }
+    }
+
+    private fun updateAdapter(topNewsResponse: TopNewsResponse) {
+        if (topNewsResponse.meta.page == 1) {
+            topNewsAdapter.newsStoryList = topNewsResponse.data
+        } else {
+            topNewsAdapter.addList(topNewsResponse.data)
+        }
+        paginationListener.setLoading(false)
     }
 
 }

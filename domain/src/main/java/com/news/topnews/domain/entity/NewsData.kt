@@ -8,12 +8,12 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class NewsData(
-    val description: String = "",
-    val image_url: String = "",
-    val published_at: String = "",
-    val snippet: String = "",
-    val source: String = "",
-    val title: String = "",
-    val url: String = "",
-    val uuid: String = ""
+    val description: String,
+    val image_url: String,
+    val published_at: String,
+    val snippet: String,
+    val source: String,
+    val title: String,
+    val url: String,
+    val uuid: String
 ) : Parcelable

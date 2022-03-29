@@ -16,8 +16,6 @@ object GradleVersions {
     const val navComponentVersion = "2.3.5"
     const val pagingVersion = "3.1.0"
     const val hiltVersion = "2.40.5"
-    const val hiltCompilerVersion = "1.0.0"
-    const val hiltLifecycleVersion = "1.0.0"
     const val glideVersion = "4.11.0"
     const val timberVersion = "5.0.1"
 

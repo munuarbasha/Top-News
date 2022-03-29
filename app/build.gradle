@@ -53,7 +53,6 @@ dependencies {
     //Coroutines
     implementation(Libraries.coroutinesCore)
     implementation(Libraries.coroutinesAndroid)
-    implementation(Libraries.coroutinesPlayServices)
 
     //material design
     implementation(Libraries.materialDesign)

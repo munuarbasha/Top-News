@@ -44,7 +44,6 @@ dependencies {
     //Coroutines
     implementation(Libraries.coroutinesCore)
     implementation(Libraries.coroutinesAndroid)
-    implementation(Libraries.coroutinesPlayServices)
     //Retrofit
     implementation(Libraries.retrofit)
     implementation(Libraries.gsonConverter)

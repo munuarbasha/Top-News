@@ -13,7 +13,7 @@ import com.news.topnews.domain.entity.NewsData
  */
 @SuppressLint("NotifyDataSetChanged")
 class TopNewsAdapter(
-    private val onNewsClicked: (newsData: NewsData, itemView: View) -> Unit
+    private val onNewsItemClicked: (newsData: NewsData, itemView: View) -> Unit
 ) : RecyclerView.Adapter<TopNewsAdapter.TopNewsViewHolder>() {
     private var newsList: ArrayList<NewsData> = ArrayList()
 
@@ -28,7 +28,6 @@ class TopNewsAdapter(
         )
     }
 
-
     override fun onBindViewHolder(holder: TopNewsViewHolder, position: Int) {
          holder.bindTopNews(newsList[position])
 
@@ -36,7 +35,7 @@ class TopNewsAdapter(
 
     override fun getItemCount() = newsList.size
 
-    var list: List<NewsData>
+    var newsStoryList: List<NewsData>
         get() = this.newsList
         set(list) {
             this.newsList.clear()
@@ -55,7 +54,7 @@ class TopNewsAdapter(
         fun bindTopNews(item: NewsData) {
             binding.newsData = item
             binding.root.setOnClickListener {
-                onNewsClicked.invoke(item, it)
+                onNewsItemClicked.invoke(item, it)
             }
         }
     }

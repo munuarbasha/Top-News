@@ -15,8 +15,6 @@ object Libraries {
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${GradleVersions.coroutinesVersion}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${GradleVersions.coroutinesVersion}"
-    const val coroutinesPlayServices =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${GradleVersions.coroutinesVersion}"
 
     //Retrofit
     const val retrofit = "com.squareup.retrofit2:retrofit:${GradleVersions.retrofitVersion}"
@@ -42,10 +40,6 @@ object Libraries {
     const val hilt = "com.google.dagger:hilt-android:${GradleVersions.hiltVersion}"
     const val hiltAndroidCompiler =
         "com.google.dagger:hilt-android-compiler:${GradleVersions.hiltVersion}"
-    const val hiltCompiler =
-        "androidx.hilt:hilt-compiler:${GradleVersions.hiltCompilerVersion}"
-    const val hiltLifecycle =
-        "androidx.hilt:hilt-lifecycle-viewmodel:${GradleVersions.hiltLifecycleVersion}"
 
     //Glide for image rendering
     const val glide = "com.github.bumptech.glide:glide:${GradleVersions.glideVersion}"

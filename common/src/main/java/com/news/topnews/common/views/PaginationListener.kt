@@ -19,7 +19,7 @@ abstract class PaginationListener(private val layoutManager: LinearLayoutManager
     private var previousTotalItemCount = 0
 
     // True if we are still waiting for the last set of data to load.
-    private var loading = true
+    private var isLoading = true
 
     // Sets the starting page index
     private val startingPageIndex = 0
@@ -35,14 +35,14 @@ abstract class PaginationListener(private val layoutManager: LinearLayoutManager
             currentPage = startingPageIndex
             previousTotalItemCount = totalItemCount
             if (totalItemCount == 0) {
-                loading = true
+                isLoading = true
             }
         }
         // If it’s still loading, we check to see if the dataset count has
         // changed, if so we conclude it has finished loading and update the current page
         // number and total item count.
-        if (loading && totalItemCount > previousTotalItemCount) {
-            loading = false
+        if (isLoading && totalItemCount > previousTotalItemCount) {
+            isLoading = false
             previousTotalItemCount = totalItemCount
         }
 
@@ -50,16 +50,16 @@ abstract class PaginationListener(private val layoutManager: LinearLayoutManager
         // the visibleThreshold and need to reload more data.
         // If we do need to reload some more data, we execute onLoadMore to fetch the data.
         // threshold should reflect how many total columns there are too
-        if (!loading && lastVisibleItemPosition + visibleThreshold > totalItemCount) {
+        if (!isLoading && lastVisibleItemPosition + visibleThreshold > totalItemCount) {
             currentPage++
             onLoadMore(currentPage, totalItemCount, view)
-            loading = true
+            isLoading = true
         }
     }
 
     // To updated loading as false after handling the load more
     fun setLoading(isLoading: Boolean) {
-        loading = isLoading
+        this.isLoading = isLoading
     }
 
     // Defines the process for actually loading more data based on page

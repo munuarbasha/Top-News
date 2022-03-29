@@ -92,7 +92,6 @@ object DeviceRootChecker {
                     inputStreamReader.close()
                 } catch (e: IOException) {
                     Timber.e(e)
-                    e.printStackTrace()
                 }
             }
         }

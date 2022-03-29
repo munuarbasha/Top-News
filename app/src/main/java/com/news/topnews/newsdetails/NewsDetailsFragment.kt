@@ -25,9 +25,7 @@ class NewsDetailsFragment : BaseBindingFragment<FragmentNewsDetailsBinding>() {
 
     private fun initListener() {
         binding.tvMoreDetails.setOnClickListener {
-            val bundle = bundleOf(
-                CommonConstants.KEY_REDIRECTION_URL to newsData?.url,
-            )
+            val bundle = bundleOf(CommonConstants.KEY_REDIRECTION_URL to newsData?.url)
             Navigation.findNavController(it)
                 .navigate(R.id.action_to_topNewsDetailsWebFragment, bundle)
         }
