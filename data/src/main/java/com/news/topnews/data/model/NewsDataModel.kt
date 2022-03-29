@@ -1,19 +1,18 @@
 package com.news.topnews.data.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import com.google.gson.annotations.SerializedName
 
 /**
  * Entity class for news data
  */
-@Parcelize
+
 data class NewsDataModel(
-    val description: String,
-    val image_url: String,
-    val published_at: String,
-    val snippet: String,
-    val source: String,
-    val title: String,
-    val url: String,
-    val uuid: String
-) : Parcelable
+    @SerializedName("description") val description: String,
+    @SerializedName("image_url") val imageUrl: String,
+    @SerializedName("published_at") val publishedAt: String,
+    @SerializedName("snippet") val snippet: String,
+    @SerializedName("source") val source: String,
+    @SerializedName("title") val title: String,
+    @SerializedName("url") val url: String,
+    @SerializedName("uuid") val uuid: String
+)

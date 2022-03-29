@@ -1,9 +1,8 @@
 package com.news.topnews.data.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import com.google.gson.annotations.SerializedName
 
-@Parcelize
+
 data class MetaData(
-    val page: Int,
-):Parcelable
+    @SerializedName("page") val page: Int,
+)

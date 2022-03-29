@@ -18,7 +18,7 @@ internal class DataModelToDomainEntityMapper @Inject constructor() :
           val inputData =  (input as ResponseWrapper.Success).value
             ResponseWrapper.Success(
                 TopNewsEntity(
-                    mapDataNewsToDomainNews(inputData.data),
+                    mapDataNewsToDomainNews(inputData.newsDataModel),
                     mapDataMetaToDomainMeta(inputData.meta)
                 )
             )
@@ -28,8 +28,8 @@ internal class DataModelToDomainEntityMapper @Inject constructor() :
         return if (!dataList.isNullOrEmpty()) dataList.map { input ->
             NewsDataEntity(
                 input.description,
-                input.image_url,
-                input.published_at,
+                input.imageUrl,
+                input.publishedAt,
                 input.snippet,
                 input.source,
                 input.title,
