@@ -1,8 +1,8 @@
 package com.news.topnews
 
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.Meta
-import com.news.topnews.domain.model.TopNewsResponse
+import com.news.topnews.domain.entity.MetaEntiry
+import com.news.topnews.domain.entity.TopNewsEntity
 import com.news.topnews.domain.usecase.TopNewsUseCase
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -39,7 +39,7 @@ class NewsViewModelTest {
     @Test
     fun testGetTopNews() {
         testCoroutineRule.runBlockingTest {
-            val topNewsResponse = TopNewsResponse(getNewsDataList(), Meta(1))
+            val topNewsResponse = TopNewsEntity(getNewsDataList(), MetaEntiry(1))
             val mockResult =
                 doReturn(flowOf(ResponseWrapper.Success(topNewsResponse))).`when`(useCase)
                     .getTopNews(page = 1)

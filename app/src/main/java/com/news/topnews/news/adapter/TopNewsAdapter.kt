@@ -6,16 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.news.topnews.databinding.TopNewsListItemBinding
-import com.news.topnews.domain.entity.NewsData
+import com.news.topnews.domain.entity.NewsDataEntity
 
 /**
  * Adapter class for Top News list Recyclerview
  */
 @SuppressLint("NotifyDataSetChanged")
 class TopNewsAdapter(
-    private val onNewsItemClicked: (newsData: NewsData, itemView: View) -> Unit
+    private val onNewsItemClicked: (newsData: NewsDataEntity, itemView: View) -> Unit
 ) : RecyclerView.Adapter<TopNewsAdapter.TopNewsViewHolder>() {
-    private var newsList: ArrayList<NewsData> = ArrayList()
+    private var newsList: ArrayList<NewsDataEntity> = ArrayList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -35,7 +35,7 @@ class TopNewsAdapter(
 
     override fun getItemCount() = newsList.size
 
-    var newsStoryList: List<NewsData>
+    var newsStoryList: List<NewsDataEntity>
         get() = this.newsList
         set(list) {
             this.newsList.clear()
@@ -43,7 +43,7 @@ class TopNewsAdapter(
             notifyDataSetChanged()
         }
 
-    fun addList(list: List<NewsData>) {
+    fun addList(list: List<NewsDataEntity>) {
         val oldSize: Int = this.newsList.size
         this.newsList.addAll(list)
         notifyItemRangeChanged(oldSize-1, this.newsList.size)
@@ -51,7 +51,7 @@ class TopNewsAdapter(
 
     inner class TopNewsViewHolder(private val binding: TopNewsListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindTopNews(item: NewsData) {
+        fun bindTopNews(item: NewsDataEntity) {
             binding.newsData = item
             binding.root.setOnClickListener {
                 onNewsItemClicked.invoke(item, it)

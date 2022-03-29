@@ -1,4 +1,4 @@
-package com.news.topnews.domain.model
+package com.news.topnews.domain.common
 /**
  * common data class for all error response
  */

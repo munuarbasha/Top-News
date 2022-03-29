@@ -1,9 +1,9 @@
-package com.news.topnews.domain.entity
+package com.news.topnews.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Meta(
+data class MetaData(
     val page: Int,
 ):Parcelable

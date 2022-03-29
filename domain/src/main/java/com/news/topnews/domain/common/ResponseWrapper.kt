@@ -1,6 +1,5 @@
 package com.news.topnews.domain.common
 
-import com.news.topnews.domain.model.ErrorResponse
 /*
 *  sealed class that represents the API call response states.
 * */

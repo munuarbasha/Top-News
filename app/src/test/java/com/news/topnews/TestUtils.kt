@@ -2,7 +2,7 @@ package com.news.topnews
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.news.topnews.domain.entity.NewsData
+import com.news.topnews.domain.entity.NewsDataEntity
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
@@ -53,7 +53,7 @@ fun <T> LiveData<T>.getOrAwaitValue(
 
 
 fun getNewsDataList() = mutableListOf(
-    NewsData(
+    NewsDataEntity(
         "mock",
         "mock",
         "mock",

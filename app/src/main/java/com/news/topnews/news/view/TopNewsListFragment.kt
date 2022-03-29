@@ -15,8 +15,8 @@ import com.news.topnews.common.utils.AlertDialogUtils
 import com.news.topnews.common.views.PaginationListener
 import com.news.topnews.databinding.FragmentTopNewsListBinding
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.NewsData
-import com.news.topnews.domain.model.TopNewsResponse
+import com.news.topnews.domain.entity.NewsDataEntity
+import com.news.topnews.domain.entity.TopNewsEntity
 import com.news.topnews.news.adapter.TopNewsAdapter
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,7 +56,7 @@ class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
         }
     }
 
-    private val onNewsItemClicked: (newsData: NewsData, itemView: View) -> Unit =
+    private val onNewsItemClicked: (newsData: NewsDataEntity, itemView: View) -> Unit =
         { newsData, itemView ->
             val bundle = bundleOf(CommonConstants.KEY_NEWS_DATA to newsData)
             Navigation.findNavController(itemView)
@@ -79,11 +79,11 @@ class TopNewsListFragment : BaseBindingFragment<FragmentTopNewsListBinding>() {
         }
     }
 
-    private fun updateAdapter(topNewsResponse: TopNewsResponse) {
-        if (topNewsResponse.meta.page == 1) {
-            topNewsAdapter.newsStoryList = topNewsResponse.data
+    private fun updateAdapter(topNewsEntity: TopNewsEntity) {
+        if (topNewsEntity.meta.page == 1) {
+            topNewsAdapter.newsStoryList = topNewsEntity.data
         } else {
-            topNewsAdapter.addList(topNewsResponse.data)
+            topNewsAdapter.addList(topNewsEntity.data)
         }
         paginationListener.setLoading(false)
     }

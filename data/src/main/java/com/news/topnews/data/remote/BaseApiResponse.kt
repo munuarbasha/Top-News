@@ -2,8 +2,8 @@ package com.news.topnews.data.remote
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.news.topnews.domain.common.ErrorResponse
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.model.ErrorResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

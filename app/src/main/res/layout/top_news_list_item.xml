@@ -67,6 +67,6 @@
 
         <variable
             name="newsData"
-            type="com.news.topnews.domain.entity.NewsData" />
+            type="com.news.topnews.domain.entity.NewsDataEntity" />
     </data>
 </layout>
