@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         style="@style/TopNewsStyle.Card"
@@ -10,44 +10,42 @@
         android:layout_height="wrap_content"
         app:cardElevation="@dimen/_6dp">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/drawable_list_item">
+            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/rlNewsImageViewContainer"
+            <ImageView
+                android:id="@+id/iVNewsImage"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_180dp">
+                android:layout_height="@dimen/_180dp"
+                android:background="@drawable/drawable_list_item"
+                android:contentDescription="@string/top_news_image"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:loadImageUrl="@{newsData.image_url}"
+                tools:src="@drawable/img_news_placeholder" />
 
-                <ImageView
-                    android:id="@+id/iVNewsImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_180dp"
-                    android:contentDescription="@string/top_news_image"
-                    android:scaleType="fitXY"
-                    bind:loadImageUrl="@{newsData.image_url}"
-                    tools:src="@drawable/img_news_placeholder" />
+            <TextView
+                android:id="@+id/tvNewsSource"
+                style="@style/TopNewsStyle.NewsAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{newsData.source}"
+                app:layout_constraintBottom_toBottomOf="@id/iVNewsImage"
+                app:layout_constraintEnd_toEndOf="@id/iVNewsImage"
+                tools:text="@string/test_author" />
 
-                <TextView
-                    android:id="@+id/tvNewsSource"
-                    style="@style/TopNewsStyle.NewsAuthor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:text="@{newsData.source}"
-                    tools:text="@string/test_author" />
-
-            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvNewsHeadlines"
                 style="@style/TopNewsStyle.Headlines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rlNewsImageViewContainer"
                 android:text="@{newsData.title}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iVNewsImage"
                 tools:text="@string/test_title" />
 
             <TextView
@@ -57,13 +55,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNewsHeadlines"
                 android:layout_marginStart="@dimen/_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNewsHeadlines"
                 bind:dateText="@{newsData.published_at}"
                 tools:text="@string/test_date" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <data>
+
         <variable
             name="newsData"
             type="com.news.topnews.domain.entity.NewsData" />
