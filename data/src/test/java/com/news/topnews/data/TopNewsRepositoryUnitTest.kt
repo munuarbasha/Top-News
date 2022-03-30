@@ -28,12 +28,12 @@ class TopNewsRepositoryUnitTest {
     internal lateinit var remoteDataSource: TopNewsRemoteDataSource
 
     @Mock
-    internal lateinit var mapperFactory: DataModelToDomainEntityMapper
+    internal lateinit var entityMapper: DataModelToDomainEntityMapper
 
 
     @Before
     fun setUp() {
-        topNewsRepository = TopNewsRepositoryImpl(remoteDataSource, mapperFactory)
+        topNewsRepository = TopNewsRepositoryImpl(remoteDataSource, entityMapper)
     }
 
     @Test
