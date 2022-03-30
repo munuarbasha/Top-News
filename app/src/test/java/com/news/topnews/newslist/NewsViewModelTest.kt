@@ -2,11 +2,11 @@ package com.news.topnews.newslist
 
 import com.news.topnews.base.BaseVMTest
 import com.news.topnews.common.runBlockingTest
-import com.news.topnews.data.common.getOrAwaitValue
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.domain.entity.MetaEntiry
 import com.news.topnews.domain.entity.NewsDataEntity
 import com.news.topnews.domain.entity.TopNewsEntity
+import com.news.topnews.domain.getOrAwaitValue
 import com.news.topnews.domain.usecase.TopNewsUseCase
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
