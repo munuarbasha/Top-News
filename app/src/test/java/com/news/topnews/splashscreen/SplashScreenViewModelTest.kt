@@ -1,5 +1,7 @@
-package com.news.topnews
+package com.news.topnews.splashscreen
 
+import com.news.topnews.base.BaseVMTest
+import com.news.topnews.common.runBlockingTest
 import com.news.topnews.domain.common.ResponseWrapper
 import com.news.topnews.splash.viewmodel.SplashScreenViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi

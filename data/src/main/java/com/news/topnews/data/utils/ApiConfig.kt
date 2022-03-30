@@ -12,4 +12,5 @@ internal object ApiConfig {
     const val TOP_NEWS_ENDPOINT = "/v1/news/top"
     const val DEFAULT_LOCALE = "us"
     const val DEFAULT_LANGUAGE = "en"
+   const val GENERIC_ERROR_MESSAGE = "Something went wrong"
 }

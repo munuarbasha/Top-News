@@ -1,4 +1,4 @@
-package com.news.topnews
+package com.news.topnews.common
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

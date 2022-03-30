@@ -2,6 +2,7 @@ package com.news.topnews.data.remote
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.news.topnews.data.utils.ApiConfig
 import com.news.topnews.domain.common.ErrorResponse
 import com.news.topnews.domain.common.ResponseWrapper
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +12,7 @@ import retrofit2.HttpException
 /**
  * Class to handle API response with Success or failure to make Safe API calls
  */
-internal abstract class BaseApiResponse {
+abstract class BaseApiResponse {
     suspend fun <T> getWrappedResponse(apiCall: suspend () -> T): ResponseWrapper<T> {
         return withContext(Dispatchers.IO) {
             try {
@@ -23,7 +24,12 @@ internal abstract class BaseApiResponse {
                         ResponseWrapper.Error(errorResponse)
                     }
                     else -> {
-                        ResponseWrapper.Error(ErrorResponse())
+                        ResponseWrapper.Error(
+                            ErrorResponse(
+                                errorCode = 0,
+                                errorMessage = ApiConfig.GENERIC_ERROR_MESSAGE
+                            )
+                        )
                     }
                 }
             }

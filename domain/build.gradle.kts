@@ -55,4 +55,6 @@ dependencies {
     implementation(Libraries.junit)
     implementation(Libraries.androidxJunit)
     implementation(Libraries.androidxEspresso)
+    testImplementation(Libraries.arcCore)
+
 }

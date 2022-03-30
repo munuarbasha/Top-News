@@ -57,7 +57,10 @@ dependencies {
 
     //test
     implementation(Libraries.junit)
-    androidTestImplementation(Libraries.androidxJunit)
     androidTestImplementation(Libraries.androidxEspresso)
+    testImplementation(Libraries.mockitoCore)
+    testImplementation(Libraries.arcCore)
+    testImplementation(Libraries.coroutinesTest)
+    testImplementation(Libraries.mockitoInline)
 
 }
