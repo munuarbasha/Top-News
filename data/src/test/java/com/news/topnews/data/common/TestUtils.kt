@@ -3,6 +3,7 @@ package com.news.topnews.data.common
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import com.news.topnews.data.model.NewsDataModel
+import com.news.topnews.domain.entity.NewsDataEntity
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
@@ -94,6 +95,20 @@ fun getNewsDataList() = mutableListOf(
         "mock"
     ),
     NewsDataModel(
+        "mock",
+        "mock",
+        "mock",
+        "mock",
+        "mock",
+        "mock",
+        "mock",
+        "mock"
+    )
+)
+
+
+fun getNewsEntityList() = mutableListOf(
+    NewsDataEntity(
         "mock",
         "mock",
         "mock",
