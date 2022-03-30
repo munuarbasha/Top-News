@@ -1,6 +1,5 @@
 package com.news.topnews.data
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.news.topnews.data.common.getNewsDataList
 import com.news.topnews.data.mapper.DataModelToDomainEntityMapper
 import com.news.topnews.data.model.MetaData
@@ -13,9 +12,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
@@ -24,8 +21,6 @@ import org.mockito.junit.MockitoJUnitRunner
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class TopNewsRepositoryUnitTest {
-    @get:Rule
-    val testInstantTaskExecutorRule: TestRule = InstantTaskExecutorRule()
 
     private lateinit var topNewsRepository: TopNewsRepository
 
