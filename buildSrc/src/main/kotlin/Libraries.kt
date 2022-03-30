@@ -51,7 +51,6 @@ object Libraries {
     const val androidxJunit = "androidx.test.ext:junit:${GradleVersions.androidxJunit}"
     const val androidxEspresso =
         "androidx.test.espresso:espresso-core:${GradleVersions.androidxEspresso}"
-    const val navigationComponentTest = "androidx.navigation:navigation-testing:${GradleVersions.navComponentVersion}"
 
     const val mokito =  "org.mockito:mockito-all:${GradleVersions.mockito}"
     const val mockitoCore = "org.mockito:mockito-core:${GradleVersions.mockitoCore}"

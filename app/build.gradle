@@ -78,7 +78,6 @@ dependencies {
     implementation(Libraries.junit)
     androidTestImplementation(Libraries.androidxJunit)
     androidTestImplementation(Libraries.androidxEspresso)
-    androidTestImplementation(Libraries.navigationComponentTest)
     testImplementation(Libraries.mokito)
     androidTestImplementation(Libraries.mockitoCore)
     testImplementation(Libraries.arcCore)

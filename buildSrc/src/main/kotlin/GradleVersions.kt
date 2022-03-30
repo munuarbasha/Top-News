@@ -13,7 +13,7 @@ object GradleVersions {
     const val retrofitVersion = "2.9.0"
     const val loggingInterceptor = "4.9.1"
     const val material = "1.5.0"
-    const val navComponentVersion = "2.3.5"
+    const val navComponentVersion = "2.4.1"
     const val pagingVersion = "3.1.0"
     const val hiltVersion = "2.40.5"
     const val glideVersion = "4.11.0"
