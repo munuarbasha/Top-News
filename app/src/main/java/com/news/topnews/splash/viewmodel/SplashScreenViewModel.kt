@@ -13,8 +13,12 @@ class SplashScreenViewModel : BaseViewModel() {
     val splashStatus: LiveData<ResponseWrapper<Boolean>> = _splashStatus
 
     init {
-        _splashStatus.value = ResponseWrapper.Loading
+        loadSplashScreen()
+    }
+
+    fun loadSplashScreen() {
         viewModelScope.launch {
+            _splashStatus.value = ResponseWrapper.Loading
             delay(timeMillis = 3000)
             val isFinishLoading = true
             val response = ResponseWrapper.Success(isFinishLoading)

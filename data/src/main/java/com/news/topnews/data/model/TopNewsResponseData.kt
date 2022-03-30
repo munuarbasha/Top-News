@@ -3,7 +3,7 @@ package com.news.topnews.data.model
 import com.google.gson.annotations.SerializedName
 
 /**
- * Top News response class
+ * Top News response model class
  */
 
 data class TopNewsResponseData(

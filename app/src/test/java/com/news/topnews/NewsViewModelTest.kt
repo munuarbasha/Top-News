@@ -9,7 +9,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito.doReturn
@@ -17,11 +16,8 @@ import org.mockito.MockitoAnnotations
 
 
 @ExperimentalCoroutinesApi
-class NewsViewModelTest {
+class NewsViewModelTest : BaseVMTest() {
 
-    // Set the main coroutines dispatcher for unit testing.
-    @get:Rule
-    var testCoroutineRule = MainCoroutineRules()
 
     // Subject under test
     private lateinit var viewModel: TopNewsViewModel
