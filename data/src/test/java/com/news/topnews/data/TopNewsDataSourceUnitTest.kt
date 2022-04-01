@@ -1,8 +1,8 @@
 package com.news.topnews.data
 
-import com.news.topnews.data.common.getNewsDataList
-import com.news.topnews.data.model.MetaData
-import com.news.topnews.data.model.TopNewsResponseData
+import com.news.topnews.data.common.getNewsDataDtoList
+import com.news.topnews.data.model.MetaDto
+import com.news.topnews.data.model.TopNewsResponseDto
 import com.news.topnews.data.remote.TopNewsRemoteDataSource
 import com.news.topnews.data.service.ApiService
 import com.news.topnews.data.utils.ApiConfig
@@ -36,12 +36,12 @@ class TopNewsDataSourceUnitTest {
     @Test
     fun topNewsSuccessResponse() {
         runBlocking {
-            val mockResult = TopNewsResponseData(getNewsDataList(), MetaData(1))
+            val mockResult = TopNewsResponseDto(getNewsDataDtoList(), MetaDto(1))
             `when`(apiService.getTopNews(page = 1)).thenReturn(mockResult)
             val topNewsList = remoteDataSource.getTopNews(1)
             val dataSourceResult = (topNewsList as ResponseWrapper.Success).value
 
-            assert(dataSourceResult.newsDataModel.size == mockResult.newsDataModel.size)
+            assert(dataSourceResult.newsDataDto.size == mockResult.newsDataDto.size)
         }
     }
 

@@ -1,13 +1,13 @@
 package com.news.topnews.data
 
-import com.news.topnews.data.common.getNewsDataList
-import com.news.topnews.data.common.getNewsEntityList
-import com.news.topnews.data.mapper.DataModelToDomainEntityMapper
-import com.news.topnews.data.model.MetaData
-import com.news.topnews.data.model.TopNewsResponseData
+import com.news.topnews.data.common.getNewsDataDtoList
+import com.news.topnews.data.common.getNewsDomainModelList
+import com.news.topnews.data.mapper.DataDtoToDomainModelMapper
+import com.news.topnews.data.model.MetaDto
+import com.news.topnews.data.model.TopNewsResponseDto
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.MetaEntiry
-import com.news.topnews.domain.entity.TopNewsEntity
+import com.news.topnews.domain.model.Meta
+import com.news.topnews.domain.model.TopNews
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,17 +20,17 @@ class ModelMapperUnitTest {
     @Test
     fun testModelMapper() {
 
-        val entityMapper = Mockito.mock(DataModelToDomainEntityMapper::class.java)
+        val modelMapper = Mockito.mock(DataDtoToDomainModelMapper::class.java)
 
-        val mockOutPutDomainEntity = ResponseWrapper.Success(TopNewsEntity(getNewsEntityList(), MetaEntiry(1)))
+        val mockOutPutDomainModel = ResponseWrapper.Success(TopNews(getNewsDomainModelList(), Meta(1)))
 
-        val mockInputDataModel = ResponseWrapper.Success(TopNewsResponseData(getNewsDataList(), MetaData(1)))
-        Mockito.`when`(entityMapper.map(mockInputDataModel)).thenReturn(mockOutPutDomainEntity)
+        val mockInputDataModel = ResponseWrapper.Success(TopNewsResponseDto(getNewsDataDtoList(), MetaDto(1)))
+        Mockito.`when`(modelMapper.map(mockInputDataModel)).thenReturn(mockOutPutDomainModel)
 
-        val mappingResult = entityMapper.map(mockInputDataModel)
+        val mappingResult = modelMapper.map(mockInputDataModel)
 
-        val outPutEntity = (mappingResult as ResponseWrapper.Success).value
-        Assert.assertEquals(outPutEntity.meta, mockOutPutDomainEntity.value.meta)
+        val outPutDomainModel = (mappingResult as ResponseWrapper.Success).value
+        Assert.assertEquals(outPutDomainModel.meta, mockOutPutDomainModel.value.meta)
     }
 
 }

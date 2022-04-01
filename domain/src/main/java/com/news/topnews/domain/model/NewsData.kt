@@ -1,4 +1,4 @@
-package com.news.topnews.domain.entity
+package com.news.topnews.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
  * Entity class for news data
  */
 @Parcelize
-data class NewsDataEntity(
+data class NewsData(
     val description: String = "",
     val image_url: String = "",
     val published_at: String = "",

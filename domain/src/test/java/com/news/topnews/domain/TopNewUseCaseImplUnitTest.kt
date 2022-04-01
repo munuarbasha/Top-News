@@ -1,8 +1,8 @@
 package com.news.topnews.domain
 
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.MetaEntiry
-import com.news.topnews.domain.entity.TopNewsEntity
+import com.news.topnews.domain.model.Meta
+import com.news.topnews.domain.model.TopNews
 import com.news.topnews.domain.repository.TopNewsRepository
 import com.news.topnews.domain.usecase.TopNewsUseCase
 import com.news.topnews.domain.usecaseimpl.TopNewsUseCaseImpl
@@ -35,7 +35,7 @@ class TopNewUseCaseImplUnitTest {
     fun testTopNewsUseCase() {
         runBlocking {
             val mockResult =
-                flowOf(ResponseWrapper.Success(TopNewsEntity(getNewsEntityList(), MetaEntiry(1))))
+                flowOf(ResponseWrapper.Success(TopNews(getNewsDomainModelList(), Meta(1))))
             Mockito.`when`(topNewsRepository.getTopNews(1)).thenReturn(mockResult)
             val useCaseData = topNewsUseCase.getTopNews(1).toList()
             assert(useCaseData.isNotEmpty())

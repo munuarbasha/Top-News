@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.news.topnews.common.base.BaseViewModel
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.TopNewsEntity
+import com.news.topnews.domain.model.TopNews
 import com.news.topnews.domain.usecase.TopNewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -20,8 +20,8 @@ import javax.inject.Inject
 class TopNewsViewModel @Inject constructor(private val topNewsUseCase: TopNewsUseCase) :
     BaseViewModel() {
 
-    private val _topNewsList = MutableLiveData<ResponseWrapper<TopNewsEntity>>()
-    val topNewsList: LiveData<ResponseWrapper<TopNewsEntity>> = _topNewsList
+    private val _topNewsList = MutableLiveData<ResponseWrapper<TopNews>>()
+    val topNewsList: LiveData<ResponseWrapper<TopNews>> = _topNewsList
     /**
      * Function to get top news
      * @param page - page number for query param

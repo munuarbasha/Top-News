@@ -1,12 +1,12 @@
 package com.news.topnews.newslist
 
 import com.news.topnews.base.BaseVMTest
+import com.news.topnews.common.getOrAwaitValue
 import com.news.topnews.common.runBlockingTest
 import com.news.topnews.domain.common.ResponseWrapper
-import com.news.topnews.domain.entity.MetaEntiry
-import com.news.topnews.domain.entity.NewsDataEntity
-import com.news.topnews.domain.entity.TopNewsEntity
-import com.news.topnews.domain.getOrAwaitValue
+import com.news.topnews.domain.model.Meta
+import com.news.topnews.domain.model.NewsData
+import com.news.topnews.domain.model.TopNews
 import com.news.topnews.domain.usecase.TopNewsUseCase
 import com.news.topnews.news.viewmodel.TopNewsViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -39,7 +39,7 @@ class NewsViewModelTest : BaseVMTest() {
     @Test
     fun testGetTopNews() {
         testCoroutineRule.runBlockingTest {
-            val topNewsResponse = TopNewsEntity(getNewsDataList(), MetaEntiry(1))
+            val topNewsResponse = TopNews(getNewsDataList(), Meta(1))
             val mockResult =
                 doReturn(flowOf(ResponseWrapper.Success(topNewsResponse))).`when`(useCase).getTopNews(page = 1)
             viewModel.getTopNews(1)
@@ -49,7 +49,7 @@ class NewsViewModelTest : BaseVMTest() {
     }
 
     private fun getNewsDataList() = mutableListOf(
-        NewsDataEntity(
+        NewsData(
             "mock",
             "mock",
             "mock",

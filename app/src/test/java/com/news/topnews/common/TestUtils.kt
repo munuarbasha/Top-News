@@ -1,4 +1,4 @@
-package com.news.topnews.domain
+package com.news.topnews.common
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer

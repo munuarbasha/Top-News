@@ -1,9 +1,9 @@
 package com.news.topnews.data
 
-import com.news.topnews.data.common.getNewsDataList
-import com.news.topnews.data.mapper.DataModelToDomainEntityMapper
-import com.news.topnews.data.model.MetaData
-import com.news.topnews.data.model.TopNewsResponseData
+import com.news.topnews.data.common.getNewsDataDtoList
+import com.news.topnews.data.mapper.DataDtoToDomainModelMapper
+import com.news.topnews.data.model.MetaDto
+import com.news.topnews.data.model.TopNewsResponseDto
 import com.news.topnews.data.remote.TopNewsRemoteDataSource
 import com.news.topnews.data.repository.TopNewsRepositoryImpl
 import com.news.topnews.domain.common.ResponseWrapper
@@ -28,18 +28,18 @@ class TopNewsRepositoryUnitTest {
     internal lateinit var remoteDataSource: TopNewsRemoteDataSource
 
     @Mock
-    internal lateinit var entityMapper: DataModelToDomainEntityMapper
+    internal lateinit var modelMapper: DataDtoToDomainModelMapper
 
 
     @Before
     fun setUp() {
-        topNewsRepository = TopNewsRepositoryImpl(remoteDataSource, entityMapper)
+        topNewsRepository = TopNewsRepositoryImpl(remoteDataSource, modelMapper)
     }
 
     @Test
     fun testTopNewsRepository() {
         runBlocking {
-            val topNewsResponse = TopNewsResponseData(getNewsDataList(), MetaData(1))
+            val topNewsResponse = TopNewsResponseDto(getNewsDataDtoList(), MetaDto(1))
             val topNewsResult = ResponseWrapper.Success(topNewsResponse)
             `when`(remoteDataSource.getTopNews(page = 1)).thenReturn(topNewsResult)
             val responseFlow = topNewsRepository.getTopNews(page = 1).toList()

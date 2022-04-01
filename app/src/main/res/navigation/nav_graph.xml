@@ -27,7 +27,7 @@
             app:destination="@id/topNewsDetailsFragment" />
         <argument
             android:name="newsData"
-            app:argType="com.news.topnews.domain.entity.NewsDataEntity" />
+            app:argType="com.news.topnews.domain.model.NewsData" />
     </fragment>
     <fragment
         android:id="@+id/topNewsDetailsFragment"

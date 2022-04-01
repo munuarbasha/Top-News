@@ -1,9 +1,9 @@
 package com.news.topnews.domain
 
-import com.news.topnews.domain.entity.NewsDataEntity
+import com.news.topnews.domain.model.NewsData
 
-fun getNewsEntityList() = mutableListOf(
-    NewsDataEntity(
+fun getNewsDomainModelList() = mutableListOf(
+    NewsData(
         "mock",
         "mock",
         "mock",

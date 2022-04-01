@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 /**
  * data class for meta response
  */
-data class MetaData(
+data class MetaDto(
     @SerializedName("page") val page: Int,
 )

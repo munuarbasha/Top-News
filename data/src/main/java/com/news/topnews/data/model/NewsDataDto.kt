@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
  * Model class for news data
  */
 
-data class NewsDataModel(
+data class NewsDataDto(
     @SerializedName("description") val description: String,
     @SerializedName("image_url") val imageUrl: String,
     @SerializedName("published_at") val publishedAt: String,
