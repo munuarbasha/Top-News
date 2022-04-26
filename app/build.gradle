@@ -34,53 +34,25 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        dataBinding = true
-        viewBinding = true
+    dataBinding {
+        enabled = true
     }
 }
 
 dependencies {
-    implementation(project(Models.domain))
     implementation(project(Models.data))
+    implementation(project(Models.presentation))
     implementation(project(Models.common))
-
-    //Androidx libs
-    implementation(Libraries.androidxCore)
-    implementation(Libraries.androidxAppCompat)
-    implementation(Libraries.constraintLayout)
-
-    //Coroutines
-    implementation(Libraries.coroutinesCore)
-    implementation(Libraries.coroutinesAndroid)
 
     //material design
     implementation(Libraries.materialDesign)
-
-    // Navigation Component
-    implementation(Libraries.navComponentFragment)
-    implementation(Libraries.navComponentUI)
-
-    // Android Jetpack Paging
-    implementation(Libraries.pagination)
 
     //Hilt for di
     implementation(Libraries.hilt)
     kapt(Libraries.hiltAndroidCompiler)
 
-    //Glide for image rendering
-    implementation(Libraries.glide)
-    kapt(Libraries.glideCompiler)
-    //Retrofit
-    implementation(Libraries.retrofit)
-    implementation(Libraries.gsonConverter)
     //test
     implementation(Libraries.junit)
     androidTestImplementation(Libraries.androidxJunit)
     androidTestImplementation(Libraries.androidxEspresso)
-    testImplementation(Libraries.mokito)
-    androidTestImplementation(Libraries.mockitoCore)
-    testImplementation(Libraries.arcCore)
-    testImplementation(Libraries.coroutinesTest)
-
 }
